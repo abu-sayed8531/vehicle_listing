@@ -5,6 +5,11 @@ trait fileHandler
     public function readFile()
     {
         if (!file_exists($this->filePath)) {
+
+            file_put_contents($this->filePath, json_encode([]));
+        }
+
+        if (file_get_contents($this->filePath) == null) {
             file_put_contents($this->filePath, json_encode([]));
         }
         return json_decode(file_get_contents($this->filePath), true);
