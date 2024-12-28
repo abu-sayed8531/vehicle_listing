@@ -1,4 +1,16 @@
 <?php
+require_once '../../app/classes/vehicleManager.php';
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $vehicle = new vehicleManager('', '', '', '');
+    $vehicle->addVehicle([
+        'name' => $_POST['name'],
+        'type' => $_POST['type'],
+        'price' => $_POST['price'],
+        'image' => $_POST['image'],
+    ]);
+    header("location: ../index.php");
+    exit();
+}
 
 include './header.php';
 ?>
