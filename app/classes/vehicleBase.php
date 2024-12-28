@@ -10,14 +10,5 @@ abstract class vehicleBase
         $this->image = $image;
     }
 
-    public function getDetails()
-    {
-        return [
-            'name' => $this->name,
-            'type' => $this->type,
-            'price' => $this->price,
-            'image' => $this->image
-
-        ];
-    }
+    abstract  public function getDetails();
 }
